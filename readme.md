@@ -8,5 +8,12 @@
 ## git remote add origin .git 
 ## git remote -v
 ## git checkout -b new_branch
-##
+## git branch -d branch_name
+# collaborators in repositories in github
+# fork it to collaborta e on same project
+## git pull origin branch_name
+## current change is the change you made
+## incoming chnage is comng from origin
+
+
 
