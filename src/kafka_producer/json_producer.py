@@ -20,7 +20,7 @@
 
 import argparse
 from uuid import uuid4
-from src.kafka-config import sasl_conf, schema_config
+from src.kafka_config import sasl_conf, schema_config
 from six.moves import input
 from src.kafka_logger import logging
 from confluent_kafka import Producer
@@ -31,7 +31,7 @@ import pandas as pd
 from typing import List
 from src.entity.generic import Generic, instance_to_dict
 
-FILE_PATH = "/home/avnish/iNeuron_Private_Intelligence_Limited/industry_ready_project/projects/data_pipeline/kafka-sensor/sample_data/sensor/aps_failure_training_set1.csv"
+#FILE_PATH = "/home/avnish/iNeuron_Private_Intelligence_Limited/industry_ready_project/projects/data_pipeline/kafka-sensor/sample_data/sensor/aps_failure_training_set1.csv"
 
 
 def car_to_dict(car: Generic, ctx):
@@ -94,3 +94,6 @@ def produce_data_using_file(topic,file_path):
 
     print("\nFlushing records...")
     producer.flush()
+
+if __name__=='__main__':
+    produce_data_using_file('sensor-data','/config/workspace/data/aps_failure_training_set1.csv')
